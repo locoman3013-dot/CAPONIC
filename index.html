@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Pagina de Presentacion</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#ff6b6b;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071022 0%, #081226 60%);color:#e6eef8;line-height:1.5}
+    header{backdrop-filter:blur(6px);background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);padding:18px 24px;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:980px;margin:28px auto;padding:0 20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffc371);display:flex;align-items:center;justify-content:center;font-weight:700;color:#08203a}
+    nav{margin-left:auto}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-weight:600}
+    .hero{display:flex;gap:28px;align-items:center}
+    .hero .info{flex:1}
+    h1{font-size:28px;margin:0 0 8px}
+    p.lead{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:10px}
+    .btn{background:var(--accent);border:none;padding:10px 14px;border-radius:10px;color:#071022;font-weight:700;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+    .card{background:var(--card);padding:18px;border-radius:14px;margin-bottom:18px;border:1px solid rgba(255,255,255,0.03)}
+
+    /* Grid */
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:start}
+    .vlog-thumb{border-radius:10px;overflow:hidden}
+    iframe{width:100%;height:360px;border:0}
+
+    /* hobbies */
+    .hobbies{display:flex;gap:12px;flex-wrap:wrap}
+    .hobby{flex:1 1 140px;background:var(--glass);padding:12px;border-radius:10px;color:var(--muted)}
+
+    /* social */
+    .social-list{display:flex;gap:10px;flex-wrap:wrap}
+    .social-link{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none}
+    .icon{width:18px;height:18px;display:inline-block}
+
+    footer{margin:36px 0 80px;text-align:center;color:var(--muted)}
+
+    /* responsive */
+    @media (max-width:880px){
+      .grid{grid-template-columns:1fr;}
+      iframe{height:220px}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">MP</div>
+        <div>
+          <div style="font-weight:700">Mi Pagina de Presentacion</div>
+          <div style="font-size:12px;color:var(--muted)">Hola, bienvenidos a mi espacio personal</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#vlog">Mi Pagina</a>
+        <a href="#hobbies">Mis Hobbies</a>
+        <a href="#redes">Mis Redes</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div class="hero" style="flex-direction:column;align-items:flex-start">
+        <div class="info">
+          <h1>Hola, soy Orlando Vargas — BIENVENIDO a mi blog personal</h1>
+          <p class="lead">Aquí comparto vídeos, pensamientos y las cosas que me apasionan: tecnologia, Videojuegos,Innovaciones,etc. Explora las secciones y sígueme en redes.</p>
+          <div class="cta">
+            <button class="btn" onclick="document.getElementById('vlog').scrollIntoView({behavior:'smooth'})">Ver mi Blog</button>
+            <button class="btn ghost" onclick="document.getElementById('redes').scrollIntoView({behavior:'smooth'})">Contactar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section id="Blog">
+        <div class="card">
+          <h2 style="margin-top:0">Mi Blog</h2>
+          <p class="lead">Últimos vídeos y pensamientos — suscríbete para no perderte nada.</p>
+          <div class="vlog-thumb" style="margin-top:12px">
+            <!-- Reemplaza el src con un vídeo real de YouTube o un archivo local -->
+            <iframe src="https://www.youtube.com/embed/NujWx4XkrQQ" title="Representacion de codigos" allowfullscreen></iframe>
+          </div>
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <a class="social-link" href="#" onclick="alert('Ir al video 1')">▶ Episodio 1</a>
+            <a class="social-link" href="#" onclick="alert('Ir al video 2')">▶ Episodio 2</a>
+            <a class="social-link" href="#" onclick="alert('Ir al video 3')">▶ Episodio 3</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Sobre mi blog</h3>
+          <p class="lead">Comparto experiencias lenguajes de programacion, reseñas de gadgets, mini-vlogs de mi día a día y tips rápidos. Subo contenido semanal.</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Apariencia</h3>
+          <p class="lead">Personaliza el look de tu página o activa/desactiva el modo oscuro.</p>
+          <div style="margin-top:10px;display:flex;gap:8px">
+            <button class="btn" id="toggleTheme">Cambiar modo</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Contacto rápido</h3>
+          <p class="lead">¿Tienes una propuesta o colaboración? Escríbeme.</p>
+          <form onsubmit="event.preventDefault();alert('Formulario enviado (simulado)')">
+            <input placeholder="Tu nombre" style="width:100%;padding:8px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <input placeholder="Tu correo" style="width:100%;padding:8px;margin-bottom:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+            <button class="btn" type="submit">Enviar</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+
+    <section id="hobbies" class="card">
+      <h2>Mis Hobbies</h2>
+      <p class="lead">Cosas o actividades donde invierto mi tiempo.</p>
+      <div class="hobbies" style="margin-top:12px">
+        <div class="hobby">
+          <strong>Desarrollar</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Me gusta desarrollar diferentes sitios web o aplicaciones.</div>
+        </div>
+        <div class="hobby">
+          <strong>Adquirir nuevas habilidades</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Descubrir nuevos lenguajes de programacion, aprender nuevos trucos y atajos en esta increible rama del desarrollo.</div>
+        </div>
+        <div class="hobby">
+          <strong>Tecnología</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Proyectos DIY, gadgets y programación.</div>
+        </div>
+        <div class="hobby">
+          <strong>Jugar Videojuegos</strong>
+          <div style="font-size:13px;color:var(--muted);margin-top:6px">Jugar, analizar y criticar sagas de mis videojuegos favoritos.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="redes" class="card" style="margin-top:18px">
+      <h2>Redes Sociales</h2>
+      <p class="lead">Sígueme en estas plataformas</p>
+
+      <div class="social-list" style="margin-top:12px">
+        <a class="social-link" href="https://www.instagram.com/orlandovargas272?igsh=MXYzdTU0ZmptY28wbg==" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.2"/></svg>
+          Instagram
+        </a>
+
+        <a class="social-link" href="https://youtube.com/@orlandovargas2517?si=xvCtmwBiOjWb5pLT" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 8l6 4-6 4V8z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          YouTube
+        </a>
+
+        <a class="social-link" href="https://x.com/Orlando52296305?t=Oeo3day0I7mjlAqFEwPGWg&s=08" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23 4.5c-.7.3-1.4.5-2.1.6.8-.5 1.4-1.3 1.7-2.2-.7.4-1.6.7-2.5.9C19.6 3 18.4 2.5 17 2.5c-2 0-3.5 1.7-3 3.5C9.9 5.5 6.6 4 4.3 1.6c-.9 1.6-.4 3.6 1.1 4.6-.6 0-1.2-.2-1.8-.5v.1c0 1.7 1.2 3.2 2.9 3.5-.5.1-1 .2-1.6.1.5 1.6 2 2.8 3.7 2.8C7 15.3 4.3 16 1.7 16c2.2 1.4 4.8 2.2 7.6 2.2 9.1 0 14-7.6 14-14v-.6c.9-.6 1.6-1.3 2.3-2.1z" stroke="currentColor" stroke-width="0.2"/></svg>
+          Twitter
+        </a>
+
+        <a class="social-link" href="https://www.facebook.com/share/1A6gXHQbuB/" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 12.1C22 6.6 17.5 2 12 2S2 6.6 2 12.1c0 4.9 3.5 8.9 8 9.9v-7H8v-3h2V9.2c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3l-.4 3H14v7c4.5-1 8-5 8-9.9z" stroke="currentColor" stroke-width="0.2"/></svg>
+          Facebook
+        </a>
+      </div>
+
+    </section>
+
+    <footer>
+      <div style="font-size:14px">© <span id="year"></span> Orlando Vargas. Todos los derechos reservados.</div>
+    </footer>
+  </main>
+
+  <script>
+    // Small JS para interacción
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('toggleTheme');
+    btn.addEventListener('click', ()=>{
+      document.documentElement.style.setProperty('--bg', getComputedStyle(document.documentElement).getPropertyValue('--bg') === '#fff' ? '#0f1724' : '#fff');
+      if(document.body.style.backgroundColor === 'white'){
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+      } else {
+        document.body.style.backgroundColor = 'white';
+        document.body.style.color = '#071022';
+      }
+    });
+  </script>
+</body>
+</html>
